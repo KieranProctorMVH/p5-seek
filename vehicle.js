@@ -32,7 +32,7 @@ class Vehicle {
         this.acceleration.set(0, 0);
     }
 
-    canvasEdgeDetection() {
+    canvasEdgeHitDetection() {
         // Hits edges on X axis.
         if ((this.position.x > width - this.size) || (this.position.x < -this.size)) {
             this.hasCrashed = true;
@@ -46,9 +46,14 @@ class Vehicle {
         }
     }
 
+    obstacleHitDetection() {
+
+    }
+
     detectCrash(active) {
         if (active) {
-            this.canvasEdgeDetection();
+            this.canvasEdgeHitDetection();
+            this.obstacleHitDetection();
         }
     }
 

@@ -97,12 +97,13 @@ function displayObstacles() {
 
 function timer() {
   if (frameCount % 60 == 0 && timeRemaining > 0) {
-    timeRemaining --;
+    timeRemaining--;
   }
 }
 
 function draw() {
   background(220);
+  timer();
 
   // displayObstacles();
   
@@ -128,8 +129,6 @@ function draw() {
     }
   } 
   
-  timer();
-
   displayInfo();
 
   if (timeRemaining == 0) {
